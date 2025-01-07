@@ -1,0 +1,8 @@
+---
+dataset:1-row:
+  type: sql
+  name: 1 row
+  query: select 1 as id, 'name' as name, 'abc@email.com' as email
+  description:
+  icon:
+  connection: data_warehouse:snowflake-iq48949-okay-to-test
