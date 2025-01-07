@@ -34,4 +34,3 @@ sync:snowflake-1-row-googlesheets-connection-sheet2:
       should_send_recovery: true
       options:
         threshold: 75
-  sync_behavior_family: mapRecords
