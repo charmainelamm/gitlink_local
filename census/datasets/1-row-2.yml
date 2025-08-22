@@ -1,8 +1,0 @@
----
-dataset:1-row-2:
-  type: sql
-  name: 1 row
-  query: select 1 as id
-  description:
-  icon:
-  connection: data_warehouse:snowflake-iq48949-okay-to-test

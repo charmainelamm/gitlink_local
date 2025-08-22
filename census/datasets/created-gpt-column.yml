@@ -1,8 +1,0 @@
----
-dataset:created-gpt-column:
-  type: sql
-  name: created gpt column
-  query: select * from CENSUS.CENSUS.DATASET_COLUMN_GPT_62BC5B01_EB44_469E_BE93_69489C334912
-  description:
-  icon:
-  connection: data_warehouse:snowflake-iq48949-okay-to-test
