@@ -1,0 +1,8 @@
+---
+dataset:related-a:
+  type: sql
+  name: Related A
+  query: select 1 as id, 'a' as a, 'b' as b, '123' as "1_number_col"
+  description: ''
+  icon:
+  connection: connection:aws-redshift-census-demo-warehouse
