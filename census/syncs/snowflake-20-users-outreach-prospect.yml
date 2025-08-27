@@ -1,0 +1,52 @@
+---
+sync:snowflake-20-users-outreach-prospect:
+  paused: false
+  behavior:
+    operation: upsert
+  mapping_configuration:
+    sync_all_source_columns:
+      enabled: false
+      mode: add_only
+  mode:
+    type: triggered
+    triggers:
+      schedule:
+        frequency: never
+  destination:
+    connection_identifier: connection:outreach
+    object_identifier: prospect
+  source:
+    type: dataset
+    connection_identifier: connection:snowflake-lw56046-census-azure-dev
+    object_identifier: dataset:20-users
+  mappings:
+  - from:
+      type: column
+      data:
+        column_name: ID
+    to:
+      field_name: emails
+    array_field: true
+    is_primary_identifier: true
+  - from:
+      type: column
+      data:
+        column_name: EMAIL
+    to:
+      field_name: emailAddresses
+      lookup_object:
+        object_identifier: emailAddress
+        field_to_match_by: email
+    array_field: true
+  operational_settings:
+    alerts:
+    - type: FailureAlertConfiguration
+      send_for: first_time
+      should_send_recovery: true
+      options: {}
+    - type: InvalidRecordPercentAlertConfiguration
+      send_for: first_time
+      should_send_recovery: true
+      options:
+        threshold: 75
+  sync_behavior_family: mapRecords
