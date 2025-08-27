@@ -3,8 +3,9 @@ dataset:related-b:
   type: sql
   name: Related B
   query: "select 1 as id, 'a' as a, 'b' as b, EXTRACT(EPOCH FROM GETDATE())::BIGINT::VARCHAR
-    as unique_col UNION ALL\nselect 1, 'aa', 'bb', EXTRACT(EPOCH FROM GETDATE())::BIGINT::VARCHAR
-    UNION ALL\nselect 2, 'a', 'b', EXTRACT(EPOCH FROM GETDATE())::BIGINT::VARCHAR "
+    as unique_col, '123' as \"123_col\" UNION ALL\nselect 1, 'aa', 'bb', EXTRACT(EPOCH
+    FROM GETDATE())::BIGINT::VARCHAR, '123' UNION ALL\nselect 2, 'a', 'b', EXTRACT(EPOCH
+    FROM GETDATE())::BIGINT::VARCHAR, '123' "
   description: ''
   icon:
   connection: connection:aws-redshift-census-demo-warehouse
