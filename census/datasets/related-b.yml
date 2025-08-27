@@ -1,0 +1,9 @@
+---
+dataset:related-b:
+  type: sql
+  name: Related B
+  query: "select 1 as id, 'a' as a, 'b' as b UNION ALL\nselect 1 as id, 'aa' as a,
+    'bb' as b UNION ALL\nselect 2 as id, 'a' as a, 'b' as b "
+  description: ''
+  icon:
+  connection: connection:aws-redshift-census-demo-warehouse
